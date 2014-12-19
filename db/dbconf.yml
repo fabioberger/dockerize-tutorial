@@ -1,0 +1,14 @@
+production:
+   driver: postgres
+   # TODO: enable ssl when possible! It is okay for now because we're running the
+   # database on the same server as our application, so there is no way for someone
+   # to snoop.
+   open: host=$POSTGRES_PORT_5432_TCP_ADDR user=app dbname=testapp sslmode=disable
+
+development:
+   driver: postgres
+   open: host=$POSTGRES_PORT_5432_TCP_ADDR user=app dbname=testapp sslmode=disable
+
+test:
+   driver: postgres
+   open: host=$POSTGRES_PORT_5432_TCP_ADDR user=app dbname=testapp sslmode=disable
