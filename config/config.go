@@ -11,8 +11,6 @@ import (
 
 var DatabaseYAMLPath = os.Getenv("GOPATH") + "/src/github.com/fabioberger/dockerize-tutorial/db/dbconf.yml"
 
-var Env string = os.Getenv("GO_ENV")
-
 var Database dbConfig
 
 type config struct {
@@ -25,15 +23,7 @@ type dbConfig struct {
 }
 
 func Init() {
-	if Env == "production" {
-		ParseDatabaseYAML("production")
-	} else if Env == "development" || Env == "" {
-		ParseDatabaseYAML("development")
-	} else if Env == "test" {
-		ParseDatabaseYAML("test")
-	} else {
-		panic("Unkown environment. Don't know what configuration to use!")
-	}
+		ParseDatabaseYAML("db")
 }
 
 func ParseDatabaseYAML(env string) {

@@ -28,9 +28,4 @@ func Init() {
 	// add a table, setting the table name to 'reminders' and
 	// specifying that the Id property is an auto incrementing PK
 	Db.AddTableWithName(Post{}, "posts").SetKeys(true, "Id")
-
-	if config.Env == "test" {
-		// if we're in the test environment, clear the database on startup
-		Db.TruncateTables()
-	}
 }
