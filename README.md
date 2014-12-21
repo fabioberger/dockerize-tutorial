@@ -33,4 +33,4 @@ Setup a Postgres Docker Container as described in the tutorial. Then run these t
 
 docker pull fabioberger/dockerize-tutorial
 
-docker run -d -p 8080:3000 --name tutapp --link dbtest:postgres fabioberger/dockerize-tutorial
+docker run -d -p 8080:4000 --name tutapp --link dbtest:postgres fabioberger/dockerize-tutorial
