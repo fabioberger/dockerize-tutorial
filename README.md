@@ -15,12 +15,10 @@ GRANT ALL PRIVILEGES ON DATABASE testapp TO app;
 
 ### Install and run locally:
 
-Install dependencies:
+Install:
 
 ``` bash
-go get github.com/codegangsta/negroni
-go get github.com/coopernurse/gorp
-go get github.com/lib/pq
+go get github.com/fabioberger/dockerize-tutorial
 ```
 
 Start Server:
@@ -28,3 +26,11 @@ Start Server:
 ``` bash
 go run main.go
 ```
+
+### Install and run in a docker container:
+
+Setup a Postgres Docker Container as described in the tutorial. Then run these two commands:
+
+docker pull fabioberger/dockerize-tutorial
+
+docker run -d -p 8080:3000 --name tutapp --link dbtest:postgres fabioberger/dockerize-tutorial
