@@ -23,7 +23,7 @@ type dbConfig struct {
 }
 
 func Init() {
-		ParseDatabaseYAML("db")
+		ParseDatabaseYAML("development")
 }
 
 func ParseDatabaseYAML(env string) {
